@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --deploy-url \"https://jitu1122.github.io/itilite-flights/\"",
+    "build": "ng build --prod --base-href=\"https://jitu1122.github.io/itilite-flights/\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
