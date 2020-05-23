@@ -166,6 +166,7 @@
     .filter-sub {
       height: unset;
       overflow-y: unset;
+      min-width: 240px;
     }
   }
   .filter-control {
@@ -188,6 +189,9 @@
 
 }
 
-@media screen and (max-width: 791px) {
-
+@media screen and (max-width: 767px) {
+  .filter-main {
+    position: fixed;
+    top: 52px;
+  }
 }
