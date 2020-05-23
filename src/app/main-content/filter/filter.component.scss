@@ -166,7 +166,7 @@
     .filter-sub {
       height: unset;
       overflow-y: unset;
-      min-width: 240px;
+      min-width: 240px !important;
     }
   }
   .filter-control {

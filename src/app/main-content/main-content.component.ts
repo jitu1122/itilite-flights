@@ -11,7 +11,7 @@ export class MainContentComponent implements OnInit {
   flights = flights;
   public carouselTileItems = [1, 2, 3, 4, 5];
   public carouselTile: NguCarouselConfig = {
-    grid: {xs: 1, sm: 3, md: 3, lg: 4, all: 0},
+    grid: {xs: 1, sm: 2, md: 3, lg: 4, all: 0},
     slide: 1,
     speed: 250,
     point: {
