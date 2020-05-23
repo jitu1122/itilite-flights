@@ -1,0 +1,25 @@
+.footer-main {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  background-color: #282C34;
+  font-size: 11px;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px 20px;
+
+  .right {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  .footer-main {
+    flex-direction: column;
+    white-space: nowrap;
+    .right {
+      margin: auto!important;
+    }
+  }
+}

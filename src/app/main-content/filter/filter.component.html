@@ -1,0 +1,46 @@
+<div #filterMain class="filter-main">
+    <div class="filter-sub" style="min-width: 227px;max-width: 500px; margin: auto;">
+        <p class="update-text"><span><img alt="" src="assets/edit.svg" width="15"></span>Update Itinerary</p>
+        <div style="display: flex; align-items: baseline;     margin-top: 40px;">
+            <div><p class="update-text"><span><img alt="" src="assets/equalizer.svg" width="15"></span>Filters
+            </p></div>
+            <div class="clear">Clear All
+            </div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+            <div><p class="sub-text">Include Outside Policy</p></div>
+            <div class="clear">
+                <mat-slide-toggle></mat-slide-toggle>
+            </div>
+        </div>
+        <div class="d-flex align-baseline mt-3">
+            <div><p class="sub-text">Maximum Stops</p></div>
+        </div>
+        <div class="row text-center" style="display: flex; align-items: baseline;     margin-top: 5px !important;">
+            <div class="col-4 col-sm-4 select-box select-box-active">Non Stop</div>
+            <div class="col-4 col-sm-4 select-box">Upto 1 stop</div>
+            <div class="col-4 col-sm-4 select-box">Upto 2+ stop</div>
+        </div>
+        <div class="d-flex align-baseline mt-3">
+            <div><p class="sub-text">Departure Time</p></div>
+        </div>
+        <div style="margin-top: 5px;">
+            <ng5-slider [(highValue)]="maxDeparture" [(value)]="minDeparture" [options]="options"></ng5-slider>
+            <div><p class="sub-text m-0">21:00 hrs - 23:00 hrs</p></div>
+        </div>
+        <div class="d-flex align-baseline mt-3">
+            <div><p class="sub-text">Duration</p></div>
+        </div>
+        <div style="margin-top: 5px;">
+            <ng5-slider [(highValue)]="maxDuration" [(value)]="minDuration" [options]="options"></ng5-slider>
+            <div><p class="sub-text m-0">01 hrs 00 min - 07 hrs 30 min</p></div>
+
+        </div>
+    </div>
+    <div (click)="filterMain.style.left = '-426px'" class="filter-control" style="top: 18px;right: 12px;z-index: 99999;">
+        <img alt="" src="assets/left-arrow-white.svg" width="15">
+    </div>
+</div>
+<div (click)="filterMain.style.left != '0' ? filterMain.style.left = '0' : '-426px'" class="filter-control" style="top: 18px;left: 0;z-index: 99;">
+    <img alt="" src="assets/equalizer-white.svg" width="15">
+</div>

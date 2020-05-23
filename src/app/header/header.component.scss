@@ -1,0 +1,28 @@
+.navbar {
+  align-items: baseline;
+  padding-top: 4px;
+  padding-bottom: 0;
+  .navbar-brand {
+    margin-right: 40px;
+  }
+  .navbar-nav {
+    width: 100%;
+    .active {
+      border-bottom: solid #E95D25;
+    }
+    .nav-item {
+      .nav-link {
+        font-size: 11px;
+        font-weight: 500;
+        color: #3B3B3C;
+        margin-left: 8px;
+        height: 40px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .navbar {
+    padding-bottom: 6px;
+  }
+}

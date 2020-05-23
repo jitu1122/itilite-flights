@@ -1,0 +1,158 @@
+<div class="row main-cont">
+    <div class="col-lg-3 p-0">
+        <app-filter></app-filter>
+    </div>
+    <div class="col-lg-9 p-0 pt-5 pt-md-4 pt-lg-0 mt-3 mt-md-0">
+        <div class="d-none d-md-block">
+            <div class="row flight-box-row" style="padding-bottom: 0;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 box-space">
+                    <div class="row">
+                        <div class="col-2 col-sm-2 col-md-2 col-lg-2 p-0 offset-4 offset-sm-3 offset-md-4 offset-lg-4">
+                            Departure
+                        </div>
+                        <div class="col-2 col-sm-3 col-md-3 col-lg-3 p-0 text-center">
+                            <div style="width: 70%">
+                                Duration
+                            </div>
+                        </div>
+                        <div class="col-2 col-sm-2 col-md-2 col-lg-2 p-0">Arrival</div>
+                        <div class="col-2 col-sm-2 col-md-1 col-lg-1 p-0">Price&nbsp;&nbsp;<span>
+                            <img src="assets/up-arrow.svg" width="12" alt=""></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flight-box-cont">
+            <div class="row flight-box-row" *ngFor="let flight of flights">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 flight-box box-space">
+                    <div class="row d-block d-md-none d-lg-none">
+                        <div class="col-12 col-sm-12 p-0 mb-1 flight-name">
+                            <p class="main-text">{{flight.airlines}} | <span class="sub-text">{{flight.id}}</span>&nbsp;|&nbsp;<span
+                                    class="sub-text">Business Class</span>&nbsp;|&nbsp;<span class="sub-text">Partially Refundable</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 col-sm-3 col-md-4 col-lg-4 p-0">
+                            <div class="row m-0 flight-name">
+                                <div class="col-4 col-sm-4 col-md-2 col-lg-2 p-0">
+                                    <mat-radio-button [value]="true"></mat-radio-button>
+                                </div>
+                                <div class="col-8 col-sm-8 col-md-3 col-lg-3 p-0">
+                                    <img style="max-width: 35px;width: 80%;" [src]="flight.logo" alt="">
+                                </div>
+                                <div class="d-none d-md-block col-md-7 col-lg-7 p-0">
+                                    <p class="main-text">{{flight.airlines}}</p>
+                                    <p class="sub-text m-0">{{flight.id}}</p>
+                                    <p class="sub-text">Business Class</p>
+                                    <p class="sub-text">Partially Refundable</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 col-sm-2 col-md-2 col-lg-2 flight-name p-0">
+                            <p class="main-text">{{flight.takeoff | date: 'HH:mm'}}</p>
+                            <p class="sub-text m-0">{{flight.from}}</p>
+                            <p class="sub-text">{{flight.takeoff | date: 'dd MMM'}}</p>
+                            <p class="sub-text d-none d-sm-block"
+                               *ngIf="flight.takeoffRemark">{{flight.takeoffRemark}}</p>
+                        </div>
+                        <div class="col-2 col-sm-3 col-md-3 col-lg-3 d-flex align-items-center p-0">
+                            <img class="d-block d-sm-none" src="assets/right-arrow.svg" width="15" alt="">
+                            <div class="d-none d-sm-block flight-name" style="width: 70%; text-align: center">
+                                <div class="m-1 sub-text">5 hrs 20 min</div>
+                                <div style="height: 1px; border-bottom:1px solid #8d8d8e; width: 100%"></div>
+                                <div class="dot"></div>
+                                <div class="m-1 sub-text">1 Stop</div>
+                            </div>
+                        </div>
+                        <div class="col-2 col-sm-2 col-md-1 col-lg-1 flight-name p-0">
+                            <p class="main-text">{{flight.land | date: 'HH:mm'}}</p>
+                            <p class="sub-text m-0">{{flight.to}}</p>
+                            <p class="sub-text">{{flight.land | date: 'dd MMM'}}</p>
+                        </div>
+                        <div class="col-2 col-sm-2 col-md-2 col-lg-2 p-0">
+                            <div class="flight-name">
+                                <p class="main-text">{{flight.price}} INR</p>
+                                <p class="sub-text" style="color: #E95D25">Outside Policy</p>
+                                <p class="sub-text mt-4 mb-0">Flight Details&nbsp;<img class="mr-3"
+                                                                                       style="transform: rotate(90deg)"
+                                                                                       src="assets/right.svg"
+                                                                                       width="14" alt=""> <span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row footer">
+    <div class="col-lg-9 p-0">
+        <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselTileItems">
+            <ngu-tile *nguCarouselDef="let item; let i = index; let ani = animate">
+                <!-- [@slider]="ani" PLease this animation to this tile to see animation. stackblitz have error with animations -->
+                <div class="tile" *ngIf="i == 0">
+                    <div class="d-flex flex-column" style="padding: 10px 0 10px 30px;">
+                        <div class="d-flex first-box justify-content-between">
+                            <div>
+                                <p>Air Asia</p>
+                                <p>I9 - 998</p>
+                            </div>
+                            <div>
+                                <p>08:30</p>
+                                <p>DEL</p>
+                                <p>02 Feb</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img class="d-block" src="assets/right-arrow.svg" width="11" alt="">
+                            </div>
+                            <div>
+                                <p>10:30</p>
+                                <p>BOM</p>
+                                <p>02 Feb</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                    <p>3,717 INR</p>
+                            </div>
+                            <div class="p-0">
+                                <img class="d-block" src="assets/tick.svg" width="15" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex first-box">
+                            <p style="color: #E95D25; width: 230px">**Outside policy requires approval.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tile" *ngIf="i != 0" [class.tile-active]="i == 1">
+                    <div class="d-flex justify-content-center" [class.item-active]="i == 1" style="padding: 20px;">
+                        <div><img class="mr-3" src="assets/airplane.svg" width="18" alt=""></div>
+                        <div [class.active-flight]="i==1">
+                            <p style="font-size: 12px; font-weight: 500" class="m-0">Bangalore to Hyderabad</p>
+                            <p style="font-size: 9px; font-weight: 500" class="m-0">03 Feb 05:00 Hrs - 09:00 Hrs</p>
+                        </div>
+                    </div>
+                </div>
+            </ngu-tile>
+            <button NguCarouselPrev class="slide-control" style="left: 0" [style.opacity]="myCarousel.isFirst ? 0.5:1">
+                <img src="assets/left-arrow.svg" width="18" alt="">
+            </button>
+            <button NguCarouselNext class="slide-control" style="right: 0" [style.opacity]="myCarousel.isLast ? 0.5:1">
+                <img src="assets/right.svg" width="18" alt="">
+            </button>
+        </ngu-carousel>
+    </div>
+    <div class="col-lg-3 p-0 bg-white button-cont d-flex align-items-center justify-content-center">
+        <div class="budget d-flex">
+            <div>Budget: 3,000 INR</div>
+            <div class="package">Your Package: 6000 INR</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-outline-primary">Cancel</button>
+            <button class="btn btn-primary">Proceed</button>
+        </div>
+    </div>
+</div>
+
